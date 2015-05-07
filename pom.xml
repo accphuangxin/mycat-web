@@ -21,43 +21,52 @@
 		<maven-war-plugin.version>3.2</maven-war-plugin.version>
 		<java.version>1.7</java.version>
 
+		<servlet-api.versioin>2.5</servlet-api.versioin>
+		<sqlite-jdbc.version>3.7.2</sqlite-jdbc.version>
+		<commons-discovery.version>0.2</commons-discovery.version>
+		<spring-framework.version>3.1.4.RELEASE</spring-framework.version>
+		<junit.version>3.8</junit.version>
 		<commons-beanutils.version>1.8.3</commons-beanutils.version>
 		<commons-collections.version>3.2.1</commons-collections.version>
 		<commons-dbcp.version>1.4</commons-dbcp.version>
-		<commons-fileupload.version>1.2.2</commons-fileupload.version>
 		<commons-io.version>2.1</commons-io.version>
 		<commons-lang.version>2.6</commons-lang.version>
-		<commons-digester3>3.2</commons-digester3>
-		<commons-logging.version>1.1.1</commons-logging.version>
+		<commons-codec.version>1.10</commons-codec.version>
+
+		<commons-fileupload.version>1.3.1</commons-fileupload.version>
+		<commons-logging.version>1.2</commons-logging.version>
+		<commons-net.version>3.3</commons-net.version>
 
 		<jackson.version>1.9.0</jackson.version>
-		<jaxrs-api.version>2.3.4.Final</jaxrs-api.version>
-		<log4j.version>2.0-rc1</log4j.version>
+
+		<slf4j.version>1.7.12</slf4j.version>
+		<log4j.version>1.2.17</log4j.version>
 
 		<mybatis.version>3.1.1</mybatis.version>
 		<mybatis-spring.version>1.1.1</mybatis-spring.version>
-
-		<slf4j.version>1.6.6</slf4j.version>
-
+		
 		<javax.inject.version>1</javax.inject.version>
+		<jstl.version>1.2</jstl.version>
 
+		<fastjson.version>1.1.22</fastjson.version>
 		<guice.version>1.0</guice.version>
+		
 		<scannotation.version>1.0.2</scannotation.version>
-
-		<spring-framework.version>3.1.4.RELEASE</spring-framework.version>
+		<freemarker.version>2.3.9</freemarker.version>
+		<mysql-connector-java.version>5.1.12</mysql-connector-java.version>
+		<base64.version>2.3.8</base64.version>
+		<httpcomps.version>4.4.1</httpcomps.version>
+		<joda.version>2.7</joda.version>
+		<ws-commons-util.version>1.0.1</ws-commons-util.version>
+		<xmlrpc.version>3.1.3</xmlrpc.version>
+<!-- 		<json.version>20141113</json.version> -->
+		<jetty.version>6.1.26</jetty.version>
+		
+		<jaxrs-api.version>2.3.4.Final</jaxrs-api.version>
 
 		<druid.version>0.2.12</druid.version>
-		<jstl.version>1.2</jstl.version>
-		<fastjson.version>1.1.22</fastjson.version>
-
-		<freemarker.version>2.3.9</freemarker.version>
+		<log4j2.version>2.0-rc1</log4j2.version>
 		<Memcached-Java-Client.version>3.0.0</Memcached-Java-Client.version>
-		<commons-discovery.version>0.2</commons-discovery.version>
-		<sqlite-jdbc.version>3.7.2</sqlite-jdbc.version>
-		<servlet-api.versioin>2.5</servlet-api.versioin>
-		<mysql-connector-java.version>5.1.12</mysql-connector-java.version>
-		<mysql.version>5.1.12</mysql.version>
-
 	</properties>
 
 	<modules>
@@ -67,11 +76,6 @@
 
 	<dependencyManagement>
 		<dependencies>
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>${mysql-connector-java.version}</version>
-			</dependency>
 			<dependency>
 				<groupId>javax.servlet</groupId>
 				<artifactId>servlet-api</artifactId>
@@ -197,11 +201,6 @@
 				<version>${commons-dbcp.version}</version>
 			</dependency>
 			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>${commons-fileupload.version}</version>
-			</dependency>
-			<dependency>
 				<groupId>commons-io</groupId>
 				<artifactId>commons-io</artifactId>
 				<version>${commons-io.version}</version>
@@ -212,9 +211,24 @@
 				<version>${commons-lang.version}</version>
 			</dependency>
 			<dependency>
+				<groupId>commons-codec</groupId>
+				<artifactId>commons-codec</artifactId>
+				<version>${commons-codec.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-fileupload</groupId>
+				<artifactId>commons-fileupload</artifactId>
+				<version>${commons-fileupload.version}</version>
+			</dependency>
+			<dependency>
 				<groupId>commons-logging</groupId>
 				<artifactId>commons-logging</artifactId>
 				<version>${commons-logging.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>commons-net</groupId>
+				<artifactId>commons-net</artifactId>
+				<version>${commons-net.version}</version>
 			</dependency>
 
 			<!-- jsckson lib -->
@@ -229,24 +243,28 @@
 				<version>${jackson.version}</version>
 			</dependency>
 
-
-
 			<!-- log4j2 lib -->
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-api</artifactId>
-				<version>${log4j.version}</version>
+				<version>${log4j2.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-core</artifactId>
-				<version>${log4j.version}</version>
+				<version>${log4j2.version}</version>
 			</dependency>
 			<dependency>
 				<groupId>org.apache.logging.log4j</groupId>
 				<artifactId>log4j-slf4j-impl</artifactId>
+				<version>${log4j2.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>log4j</groupId>
+				<artifactId>log4j</artifactId>
 				<version>${log4j.version}</version>
 			</dependency>
+			
 
 			<!-- mybatis lib -->
 			<dependency>
@@ -260,12 +278,7 @@
 				<version>${mybatis-spring.version}</version>
 			</dependency>
 
-			<!-- slf4j lib -->
-			<dependency>
-				<groupId>org.slf4j</groupId>
-				<artifactId>slf4j-api</artifactId>
-				<version>${slf4j.version}</version>
-			</dependency>
+
 
 			<!-- inject lib -->
 			<dependency>
@@ -311,6 +324,68 @@
 				<version>${freemarker.version}</version>
 			</dependency>
 			<!-- freemarker end -->
+			<dependency>
+				<groupId>mysql</groupId>
+				<artifactId>mysql-connector-java</artifactId>
+				<version>${mysql-connector-java.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>net.iharder</groupId>
+				<artifactId>base64</artifactId>
+				<version>${base64.version}</version>
+			</dependency>
+			
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpcore</artifactId>
+				<version>${httpcomps.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.httpcomponents</groupId>
+				<artifactId>httpclient</artifactId>
+				<version>${httpcomps.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>joda-time</groupId>
+				<artifactId>joda-time</artifactId>
+				<version>${joda.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>ws-commons-util</groupId>
+				<artifactId>ws-commons-util</artifactId>
+				<version>${ws-commons-util.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xmlrpc</groupId>
+				<artifactId>xmlrpc-server</artifactId>
+				<version>${xmlrpc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.apache.xmlrpc</groupId>
+				<artifactId>xmlrpc-common</artifactId>
+				<version>${xmlrpc.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty</artifactId>
+				<version>${jetty.version}</version>
+				<exclusions>
+					<exclusion>
+						<artifactId>servlet-api</artifactId>
+						<groupId>org.mortbay.jetty</groupId>
+					</exclusion>
+				</exclusions>
+			</dependency>
+			<dependency>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-util</artifactId>
+				<version>${jetty.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.mortbay.jetty</groupId>
+				<artifactId>jetty-management</artifactId>
+				<version>${jetty.version}</version>
+			</dependency>
 
 			<!-- rainbow server -->
 			<dependency>
@@ -328,95 +403,11 @@
 
 			<!-- jrds -->
 			<dependency>
-				<groupId>base64</groupId>
-				<artifactId>base64</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/base64.jar</systemPath>
-			</dependency>
-			<dependency>
 				<groupId>boot</groupId>
 				<artifactId>boot</artifactId>
 				<version>1.0</version>
 				<scope>system</scope>
 				<systemPath>${project.basedir}/lib/boot.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>commons-codec</groupId>
-				<artifactId>commons-codec</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/commons-codec.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>commons-fileupload</groupId>
-				<artifactId>commons-fileupload</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/commons-fileupload.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>commons-io</groupId>
-				<artifactId>commons-io</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/commons-io.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>commons-logging</groupId>
-				<artifactId>commons-logging</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/commons-logging.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>commons-net</groupId>
-				<artifactId>commons-net</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/commons-net.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>httpclient</groupId>
-				<artifactId>httpclient</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/httpclient.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>httpcore</groupId>
-				<artifactId>httpcore</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/httpcore.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>jetty-management</groupId>
-				<artifactId>jetty-management</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/jetty-management.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>jetty-util</groupId>
-				<artifactId>jetty-util</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/jetty-util.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>jetty</groupId>
-				<artifactId>jetty</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/jetty.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>joda-time</groupId>
-				<artifactId>joda-time</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/joda-time.jar</systemPath>
 			</dependency>
 			<dependency>
 				<groupId>jrds</groupId>
@@ -426,32 +417,11 @@
 				<systemPath>${project.basedir}/lib/jrds.jar</systemPath>
 			</dependency>
 			<dependency>
-				<groupId>json</groupId>
-				<artifactId>json</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/json.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>log4j</groupId>
-				<artifactId>log4j</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/log4j.jar</systemPath>
-			</dependency>
-			<dependency>
 				<groupId>rrd4j</groupId>
 				<artifactId>rrd4j</artifactId>
 				<version>1.0</version>
 				<scope>system</scope>
 				<systemPath>${project.basedir}/lib/rrd4j.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>servlet-api</groupId>
-				<artifactId>servlet-api</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/servlet-api.jar</systemPath>
 			</dependency>
 			<dependency>
 				<groupId>snmp4j</groupId>
@@ -468,44 +438,57 @@
 				<systemPath>${project.basedir}/lib/snmpprobes.jar</systemPath>
 			</dependency>
 			<dependency>
-				<groupId>ws-commons-util</groupId>
-				<artifactId>ws-commons-util</artifactId>
+				<groupId>json</groupId>
+				<artifactId>json</artifactId>
 				<version>1.0</version>
 				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/ws-commons-util.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>xml-apis</groupId>
-				<artifactId>xml-apis</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/xml-apis.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>xmlrpc-common</groupId>
-				<artifactId>xmlrpc-common</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/xmlrpc-common.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>xmlrpc-server</groupId>
-				<artifactId>xmlrpc-server</artifactId>
-				<version>1.0</version>
-				<scope>system</scope>
-				<systemPath>${project.basedir}/lib/xmlrpc-server.jar</systemPath>
-			</dependency>
-			<dependency>
-				<groupId>mysql</groupId>
-				<artifactId>mysql-connector-java</artifactId>
-				<version>${mysql.version}</version>
-			</dependency>
+				<systemPath>${project.basedir}/lib/json.jar</systemPath>
+			</dependency>			
+			
 		</dependencies>
 	</dependencyManagement>
 
 	<build>
 		<pluginManagement>
 			<plugins>
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-dependency-plugin</artifactId>
+										<versionRange>[2.0,)</versionRange>
+										<goals>
+											<goal>copy-dependencies</goal>
+											<goal>unpack</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.apache.maven.plugins</groupId>
+										<artifactId>maven-compiler-plugin</artifactId>
+										<versionRange>[2.0,)</versionRange>
+										<goals>
+											<goal>unpack</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-compiler-plugin</artifactId>
@@ -611,4 +594,8 @@
 
 
 
+	<dependencies>
+
+
+	</dependencies>
 </project>
