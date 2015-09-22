@@ -33,13 +33,13 @@ form input {
 
 	$(document).ready(function() {
 		initTable();
-		
-		$("form input").click(function(){
+
+		$("form input").click(function() {
 			$("#add_err_msg_div").hide();
 		})
 	});
-	
-	function openAddErr(msg){
+
+	function openAddErr(msg) {
 		$("#add_err_msg").html(msg);
 		$("#add_err_msg_div").show("slow");
 	}
@@ -60,8 +60,8 @@ form input {
 				tr += obj.ip + "</td><td>";
 				tr += obj.port + "</td><td>";
 				tr += obj.community + "</td><td>";
-				tr += "</td><td><a class='btn' onclick=\"del(this,'"
-						+ obj.guid + "')\">删除</a></td></tr>";
+				tr += "</td><td><a class='btn' onclick=\"del(this,'" + obj.guid
+						+ "')\">删除</a></td></tr>";
 				$("#table1 tbody tr:last").before(tr)
 			});
 		};
@@ -136,7 +136,7 @@ form input {
 		}
 
 		var data = {
-			snmpname:snmpname,
+			snmpname : snmpname,
 			ip : ip,
 			port : port,
 			community : community
@@ -164,77 +164,85 @@ form input {
 	}
 </script>
 </head>
-<div class="row-fluid">
-	<div class="span12">
-		<blockquote>
-			<p>SNMP接参数配置.</p>
-			<p>
-				<small>配置一个JMX连接参数,<font color="red">注：只限于linux操作系统监控!</font>   <a href="http://note.youdao.com/share/?id=69a9f8d3d1392b4525efb8f9ebc7b404&type=note">linux snmp安装</a></small>
-			</p>
-			
-		</blockquote>
-		<table class="table table-hover table-striped table-condensed"
-			id="table1">
-			<thead>
-				<tr>
-					<th>snmp名称</th>
-					<th>ip</th>
-					<th>端口</th>
-					<th>community</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td colspan="6">
-						<!-- <a class="btn btn-primary" onclick="addTr(this);">添加新的连接...</a>  -->
-						<a id="modal-164474" href="#modal-container-164474" role="button"
-						class="btn btn-primary" data-toggle="modal">添加新的连接...</a>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-	</div>
-</div>
+<body class="container">
+	<div class="row-fluid">
+		<div class="span12">
+			<blockquote>
+				<p>SNMP接参数配置.</p>
+				<p>
+					<small>配置一个JMX连接参数,<font color="red">注：只限于linux操作系统监控!</font>
+						<a
+						href="http://note.youdao.com/share/?id=69a9f8d3d1392b4525efb8f9ebc7b404&type=note">linux
+							snmp安装</a></small>
+				</p>
 
-<div id="modal-container-164474" class="modal hide fade" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"
-			aria-hidden="true">×</button>
-		<h3 id="myModalLabel">数据源配置</h3>
+			</blockquote>
+			<table class="table table-hover table-striped table-condensed"
+				id="table1">
+				<thead>
+					<tr>
+						<th>snmp名称</th>
+						<th>ip</th>
+						<th>端口</th>
+						<th>community</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td colspan="6">
+							<!-- <a class="btn btn-primary" onclick="addTr(this);">添加新的连接...</a>  -->
+							<a id="modal-164474" href="#modal-container-164474" role="button"
+							class="btn btn-primary" data-toggle="modal">添加新的连接...</a>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
 	</div>
-	<div class="modal-body">
-		<form class="form-horizontal">
-		<div class="control-group">
-				<div class="col-sm-12" align="center" style="margin-top: 5px;">
-					<input id="snmpname" type="text" placeholder="请输入snmp名称" />
+
+	<div id="modal-container-164474" class="modal hide fade" role="dialog"
+		aria-labelledby="myModalLabel" aria-hidden="true">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal"
+				aria-hidden="true">×</button>
+			<h3 id="myModalLabel">数据源配置</h3>
+		</div>
+		<div class="modal-body">
+			<form class="form-horizontal">
+				<div class="control-group">
+					<div class="col-sm-12" align="center" style="margin-top: 5px;">
+						<input id="snmpname" type="text" placeholder="请输入snmp名称" />
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<div class="col-sm-12" align="center" style="margin-top: 5px;">
-					<input id="ip" type="text" placeholder="请输入IP" />
+				<div class="control-group">
+					<div class="col-sm-12" align="center" style="margin-top: 5px;">
+						<input id="ip" type="text" placeholder="请输入IP" />
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<div class="col-sm-12" align="center" style="margin-top: 5px;">
-					<input id="port" type="text" value="161" placeholder="请输入端口,defult:161" />
+				<div class="control-group">
+					<div class="col-sm-12" align="center" style="margin-top: 5px;">
+						<input id="port" type="text" value="161"
+							placeholder="请输入端口,defult:161" />
+					</div>
 				</div>
-			</div>
-			<div class="control-group">
-				<div class="col-sm-12" align="center" style="margin-top: 5px;">
-					<input id="community" type="text" value="public" placeholder="请输入community,defult:public" />
+				<div class="control-group">
+					<div class="col-sm-12" align="center" style="margin-top: 5px;">
+						<input id="community" type="text" value="public"
+							placeholder="请输入community,defult:public" />
+					</div>
 				</div>
-			</div>
-			<div class="control-group" id="add_err_msg_div" style="display: none;">
-				<div class="col-sm-12" align="center" style="margin-top: 5px;">
-					<div class="alert alert-info" role="alert"  id="add_err_msg">用户名或密码不能为空</div>
+				<div class="control-group" id="add_err_msg_div"
+					style="display: none;">
+					<div class="col-sm-12" align="center" style="margin-top: 5px;">
+						<div class="alert alert-info" role="alert" id="add_err_msg">用户名或密码不能为空</div>
+					</div>
 				</div>
-			</div>
-		</form>
+			</form>
+		</div>
+		<div class="modal-footer">
+			<button class="btn btn-primary" onclick="create()">保存设置</button>
+			<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
+		</div>
 	</div>
-	<div class="modal-footer">
-		<button class="btn btn-primary" onclick="create()">保存设置</button>
-		<button class="btn" data-dismiss="modal" aria-hidden="true">关闭</button>
-	</div>
-</div>
+</body>
 </html>

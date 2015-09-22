@@ -77,12 +77,22 @@
 				href="javascript:show_page('./frame/jmx_setting.html','jmxmanger')">
 					<i class="icon-th-large"></i> <span>jmx管理</span>
 			</a></li>
-			
 			<li id="snmpmanger"><a
 				href="javascript:show_page('./frame/snmp_setting.html','snmpmanger')">
 					<i class="icon-th-large"></i> <span>snmp管理</span>
 			</a></li>
-			
+		    <li id="jmxshow">
+                <a class="dropdown-toggle" href="#">
+                    <i class="icon-picture"></i>
+                    <span>jmx监控</span>
+                    <i class="icon-chevron-down"></i>
+                </a>
+                <ul class="submenu">
+                    <li><a href="javascript:show_page('./jmonitor/index.html','jmxshow')">实时监控</a></li>
+                    <li><a href="javascript:show_page('./jmonitor/runtime.html','jmxshow')">系统参数</a></li>
+                    <li><a href="javascript:show_page('./jmonitor/thread.html','jmxshow')">线程信息</a></li>
+                </ul>
+            </li>
 			<li id="jiankong"><a
 				href="javascript:show_page('./jrds/index.html','jiankong')"> <i
 					class="icon-picture"></i> <span>监控中心</span>

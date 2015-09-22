@@ -41,7 +41,6 @@ public class JMXService extends BaseService {
 			context.addAttr("fileName", jrdsconfg);
 			context.addAttr("guid", new ObjectId().toString());
 			super.insert(context, NAMESPACE);
-			
 			createjmxjrds(jrdsconfg, context.getAttr());
 		} catch (Exception e) {
 			context.setSuccess(false);
